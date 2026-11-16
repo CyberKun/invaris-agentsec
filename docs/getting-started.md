@@ -205,7 +205,7 @@ See [GitHub Actions](github-actions.md) for the packaged action, or [Testing](te
 policy to your agent's URL. `agentsec init` writes `https://your-agent.example/...`, which never resolves on purpose.
 
 **`did not answer a preflight request: cannot reach agent at ...: Connection refused`**: the agent is not running or
-the port is wrong. The bundled policy uses port 8000. No scenario runs and AgentSec exits with code 2.
+the port in `agent.endpoint` is wrong. No scenario runs and AgentSec exits with code 2.
 
 **`unknown key(s) in policy`**: typos are rejected on purpose so a misspelled limit is not silently
 ignored. The message lists the allowed keys.
