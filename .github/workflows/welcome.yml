@@ -1,0 +1,36 @@
+name: Welcome new contributors
+
+# Posts a thank-you on someone's first issue or first pull request in this repo, and points them
+# at CONTRIBUTING.md and good first issues. It only comments: it never checks out or runs the
+# contributor's code, so pull_request_target (needed to comment on PRs from forks) is safe here.
+
+on:
+  issues:
+    types: [opened]
+  pull_request_target:
+    types: [opened]
+
+permissions:
+  issues: write
+  pull-requests: write
+
+jobs:
+  welcome:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/first-interaction@1c4688942c71f71d4f5502a26ea67c331730fa4d # v3.1.0
+        with:
+          issue_message: |
+            Thanks for opening your first issue on AgentSec! 🙌
+
+            I read every issue and will get back to you soon. If you'd like to work on it yourself, say so here and I'll help you get started.
+
+            New to the project? See [CONTRIBUTING.md](https://github.com/invarislabs/invaris-agentsec/blob/main/CONTRIBUTING.md) and the [good first issues](https://github.com/invarislabs/invaris-agentsec/labels/good%20first%20issue).
+          pr_message: |
+            Thanks for your first pull request to AgentSec! 🎉 Really appreciate you taking the time.
+
+            I'll review it within a day or two. In the meantime:
+            - Make sure the checks pass.
+            - The CLA bot will ask you to sign the contributor agreement with a one-line comment, if you haven't already.
+
+            Looking for more to work on? See [CONTRIBUTING.md](https://github.com/invarislabs/invaris-agentsec/blob/main/CONTRIBUTING.md) and the [good first issues](https://github.com/invarislabs/invaris-agentsec/labels/good%20first%20issue).
